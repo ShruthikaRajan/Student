@@ -1,0 +1,327 @@
+/* body{
+    background-image: url("https://images.pexels.com/photos/733852/pexels-photo-733852.jpeg?cs=srgb&dl=pexels-tirachard-kumtanom-733852.jpg&fm=jpg");
+    background-repeat: no repeat;
+    background-position:center;
+    background-attachment:fixed;
+    background-size:cover;
+    padding:15%;
+    margin-top:88 px;
+    margin-bottom:200 px;
+    margin-left:100%;
+    margin-right:200px;
+
+}
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
+  font-weight:  300; 
+  margin:  0; 
+}
+primary: rgb(182,157,230); 	
+html, body {
+  height:  100vh; 
+  width:  100vw;
+  margin:  0 0; 
+  display:  flex; 
+  align-items:  flex-start; 
+  justify-content:  flex-start; 
+  background:  #f3f2f2; 
+}
+h4 {
+  font-size:  24px; 
+  font-weight:  600; 
+  color:  #000; 
+  opacity:  .85; 
+}
+label { 
+  font-size:  12.5px; 
+  color:  #000;
+  opacity:  .8;
+  font-weight:  400; 
+}
+.form {
+  padding:  50px 50px; 
+  background:  #fefefe; 
+  display:  flex; 
+  flex-direction:  column;
+  align-items:  flex-start; 
+  padding-bottom:  100px; 
+  width:  300px; 
+  h4 {
+    margin-bottom:  20px;
+    color:  rgba(#000, .5);
+    span {
+      color:  rgba(#000, 1);
+      font-weight:  700; 
+    }
+  }
+  p {
+    line-height:  155%; 
+    margin-bottom:  5px; 
+    font-size:  14px; 
+    color:  #000; 
+    opacity:  .65;
+    font-weight:  400; 
+    max-width:  200px; 
+    margin-bottom:  40px; 
+  }
+}
+a.discrete {
+    color:  rgba(#000, .4); 
+    font-size:  14px; 
+    border-bottom:  solid 1px rgba(#000, .0);
+    padding-bottom:  4px;  
+    margin-left:  auto; 
+    font-weight:  300; 
+    transition:  all .3s ease; 
+    margin-top:  40px; 
+    &:hover {
+      border-bottom:  solid 1px rgba(#000, .2);
+    }
+  }
+button {
+  
+  width:  auto;
+  min-width:  100px;
+  border-radius:  24px; 
+  text-align:  center; 
+  padding:  15px 40px;
+  margin-top:  5px; 
+  background-color:  saturate(primary, 30%); 
+  color:  #fff; 
+  font-size:  14px;
+  margin-left:  auto; 
+  font-weight:  500; 
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13); 
+  border:  none;
+  transition:  all .3s ease; 
+  outline: 0; 
+  &:hover {
+    transform:  translateY(-3px);
+    box-shadow:  0 2px 6px -1px rgba(primary, .65);
+    &:active {
+      transform:  scale(.99);
+    }
+  }
+}
+input {
+  font-size:  16px; 
+  padding:  20px 0px; 
+  height:  56px; 
+  border:  none; 
+  border-bottom:  solid 1px rgba(0,0,0,.1); 
+  background:  #fff; 
+  width:  280px; 
+  box-sizing:  border-box; 
+  transition:  all .3s linear; 
+  color:  #000; 
+  font-weight:  400;
+  
+  &:focus {
+    border-bottom:  solid 1px primary; 
+    outline: 0; 
+    box-shadow:  0 2px 6px -8px rgba(primary, .45);
+  }
+}
+.floating-label {
+  position:  relative; 
+  margin-bottom:  10px;
+  width:  100%; 
+  label {
+    position:  absolute; 
+    top: calc(50% - 7px);
+    left:  0; 
+    opacity:  0; 
+    transition:  all .3s ease; 
+    padding-left:  44px; 
+  }
+  input {
+    width:  calc(100% - 44px); 
+    margin-left:  auto;
+    display:  flex; 
+  }
+  .icon {
+    position:  absolute; 
+    top:  0; 
+    left:  0; 
+    height:  56px; 
+    width:  44px; 
+    display:  flex; 
+    svg {
+      height:  30px; 
+      width:  30px; 
+      margin:  auto;
+      opacity:  .15; 
+      transition:  all .3s ease; 
+      path {
+        transition:  all .3s ease; 
+      }
+    }
+  }
+  input:not(:placeholder-shown) {
+    padding:  28px 0px 12px 0px; 
+  }
+  input:not(:placeholder-shown) + label {
+    transform:  translateY(-10px); 
+    opacity:  .7; 
+  }
+  input:valid:not(:placeholder-shown) + label + .icon {
+    svg {
+      opacity:  1; 
+      path {
+        fill:  primary; 
+      }      
+    }
+  }
+  input:not(:valid):not(:focus) + label + .icon {
+    animation-name: shake-shake;
+    animation-duration: .3s;
+  }
+}
+
+@keyframes shake-shake {
+  0% { transform: translateX(displacement);}
+  20% { transform : translateX(displacement); }
+  40% { transform : translateX(displacement);}
+  60% { transform : translateX(displacement);}  
+  80% { transform : translateX(displacement);}
+  100% { transform : translateX(0px);}
+}
+.session {
+  display:  flex; 
+  flex-direction:  row; 
+  width:  auto; 
+  height:  auto; 
+  margin:  auto auto; 
+  background:  #ffffff; 
+  border-radius:  4px; 
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.12);
+}
+.left {
+  width:  220px; 
+  height:  auto; 
+  min-height:  100%; 
+  position:  relative; 
+  background-image: url("https://media.istockphoto.com/id/1328368631/photo/ready-for-school-concept-background-with-books-alarm-clock-and-accessory.webp?b=1&s=170667a&w=0&k=20&c=I1oVAJ9aPkEBHtPEa5GAMvjD_rpzZiaMezHR0peDzfw=");
+  background-size:  cover;
+  border-top-left-radius:  4px; 
+  border-bottom-left-radius:  4px; 
+  svg {
+    height:  40px; 
+    width:  auto; 
+    margin:  20px; 
+  }
+} */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+body {
+  background: #c0c0c0; 
+  font-family: Raleway, sans-serif;
+  color: #666;
+}
+
+.login {
+  margin: 20px auto;
+  padding: 40px 50px;
+  max-width: 300px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 1px 1px 1px #666;
+}
+  .login input {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 14px 12px;
+    font-size: 16px;
+    border-radius: 2px; 
+    font-family: Raleway, sans-serif;
+  }
+
+.login input[type=text],
+.login input[type=password] {
+  border: 1px solid #c0c0c0;
+  transition: .2s;
+}
+
+.login input[type=text]:hover {
+  border-color: #080e0b;
+  outline: none;
+  transition: all .2s ease-in-out;
+} 
+
+.login input[type=submit] {
+  border: none;
+  background: #5cf5a4;
+  color: white;
+  font-weight: bold;  
+  transition: 0.2s;
+  margin: 20px 0px;
+}
+
+.login input[type=submit]:hover {
+  background: #F44336;  
+}
+
+  .login h2 {
+    margin: 20px 0 0; 
+    color: #EF5350;
+    font-size: 28px;
+  }
+
+.login p {
+  margin-bottom: 40px;
+}
+
+.links {
+  display: table;
+  width: 100%;  
+  box-sizing: border-box;
+  border-top: 1px solid #c0c0c0;
+  margin-bottom: 10px;
+}
+
+.links a {
+  display: table-cell;
+  padding-top: 10px;
+}
+
+.links a:first-child {
+  text-align: left;
+}
+
+.links a:last-child {
+  text-align: right;
+}
+
+  .login h2,
+  .login p,
+  .login a {
+    text-align: center;    
+  }
+
+.login a {
+  text-decoration: none;  
+  font-size: .8em;
+}
+
+.login a:visited {
+  color: inherit;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/733852/pexels-photo-733852.jpeg?cs=srgb&dl=pexels-tirachard-kumtanom-733852.jpg&fm=jpg");
+    background-repeat: no repeat;
+    background-position:center;
+    background-attachment:fixed;
+    background-size:cover;
+    padding:15%;
+    margin-top:88 px;
+    margin-bottom:200 px;
+    margin-left:100%;
+    margin-right:200px;
+
+}
